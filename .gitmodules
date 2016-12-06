@@ -1,0 +1,3 @@
+[submodule "website/static/PhotoSwipe"]
+	path = website/static/PhotoSwipe
+	url = git@github.com:dimsemenov/PhotoSwipe.git
