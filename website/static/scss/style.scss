@@ -1,0 +1,203 @@
+/* Open dropdowns on hover instead of click. */
+@media (min-width: 768px) {
+    .dropdown:hover {
+        background: #e7e7e7;
+    }
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+/* The following is needed since the dropdowns are <div> elements instead of <a> elements */
+.nav > li > div {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    cursor: default;
+}
+.navbar-nav > li > div {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+}
+.navbar-default .navbar-nav > li > div {
+    color: rgb(119, 119, 119);
+}
+.navbar-collapse.collapse {
+    display: none;
+}
+.dropdown-open {
+    background: #e7e7e7;
+}
+/* /custom bootstrap nav */
+
+/* Variables */
+$breakpoint-sm-min: 768px;
+$breakpoint-md-min: 992px;
+$breakpoint-lg-min: 1200px;
+$breakpoint-xl-min: 1700px;
+$breakpoint-xs-max: ($breakpoint-sm-min - 1);
+$breakpoint-sm-max: ($breakpoint-md-min - 1);
+$breakpoint-md-max: ($breakpoint-lg-min - 1);
+$breakpoint-lg-max: ($breakpoint-xl-min - 1);
+
+html {
+    height: 100%;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a,
+a:focus,
+a:hover {
+    color: #fff;
+}
+
+body {
+/*    padding-top: 50px; /* nav-bar */
+    background-color: #333;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", 
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", 
+    "Helvetica Neue", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+
+    display: flex;
+    /*min-height: 100vh;*/
+    height: 100%;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+img {
+        vertical-align: middle;
+}
+
+/* 
+ * Main container, used to grow (flex: 1;) the space between the header and 
+ * footer when the space is less than the vertical height.
+ */
+.main {
+    flex: 1;
+}
+
+header, footer, nav {
+    flex: none;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 0 .05rem .1rem rgba(0,0,0,.54);
+}
+
+.area {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: 768px) { width: 750px; }
+    @media (min-width: 992px) { width: 970px; }
+    @media (min-width: 1200px) { width: 1140px; }
+}
+
+.container {                                                                    
+    .main > & {
+        margin-top: 20px;
+    }
+    margin-right: auto;                                                           
+    margin-left: auto;                                                            
+
+    padding-right: 15px;                                                          
+    padding-left: 15px;                                                           
+
+    @media screen and (min-width: $breakpoint-sm-min) { width: 700px; }
+    &.wide {
+        @media screen and (min-width: $breakpoint-sm-min) { width: 720px; }
+        @media screen and (min-width: $breakpoint-md-min) { width: 960px; }
+        @media screen and (min-width: $breakpoint-lg-min) { width: 1140px; }
+        @media screen and (min-width: $breakpoint-xl-min) { width: 1600px; }
+    }
+
+    // Clearfix for floats
+//    &:before,                                                              
+//    &:after {                                                                    
+//        content: " ";                                                                 
+//        display: table;                                                               
+//    }                                                                               
+//    &:after {                                                                    
+//        clear: both;                                                                  
+//    }
+}
+
+/*
+ * div {
+ *     .flex.gallery {
+ *         padding: 0;
+ *         list-style: none;
+ *
+ *         display: flex;
+ *         flex-flow: row wrap;
+ *         justify-content: center;
+ *     }
+ * }
+ */
+
+figure {
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    figure {
+        padding: 1px;
+        flex: 1 1 auto;
+        &.thumb {
+            width: 400px;
+        }
+    }
+    &.gallery { /* NB: selector for PhotoSwipe */
+        padding: 0;
+        list-style: none;
+        figcaption {
+            display: none;
+        }
+    }
+    &.front {
+        padding: 5px;
+        width: 300px;
+    }
+}
+
+.copyright {
+    opacity: 0.3;
+    font-size: 0.7em;
+    padding: 8px;
+}
+
+/* On hover effects */
+/*
+ * div .flex img { 
+ *     transition: .8s opacity;
+ * }
+ * div .flex:hover img {
+ *     opacity: 0.3;
+ * }
+ * div .flex.gallery:hover img:hover {
+ *     opacity: 1;
+ * }
+ */

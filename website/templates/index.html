@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container wide flex gallery" role="main">
+    <div class="flex front">
+        <a class="thumbnail" href="{{url_for('product')}}">
+            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+        </a>
+        <h1 class="caption-header">Product</h1>
+    </div>
+    <div class="flex front">
+        <a class="thumbnail" href="#">
+            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+        </a>
+        <h1 class="caption-header">Portret</h1>
+    </div>
+    <div class="flex front">
+        <a class="thumbnail" href="#">
+            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+        </a>
+        <h1 class="caption-header">Les</h1>
+    </div>
+    <div class="flex front">
+        <a class="thumbnail" href="#">
+            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+        </a>
+        <h1 class="caption-header">Persoonlijk</h1>
+    </div>
+</div>
+{% endblock %}

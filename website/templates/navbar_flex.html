@@ -1,0 +1,22 @@
+<!-- Component -->
+<nav class="navbar-stripe">
+    <!-- Class `area` is a container -->
+    <div class="navbar container wide">
+        <!-- Logo -->
+        <a href="{{ url_for('index') }}" class="brand">Mark Hendrix Fotografie</a>
+        <!-- Button to toggle the display menu  -->
+        <button data-collapse data-target="#navigation" id="nav-toggle" class="hamburger">
+            <!-- Hamburger icon -->
+            <span class="icon"></span>
+        </button>
+        <!-- List of links -->
+        <ul role="navigation" id="navigation">
+            <li><a href="{{ url_for('index') }}" class="item">Home</a></li>
+            <li><a href="{{ url_for('product') }}" class="item">Product</a></li>
+            <li><a href="{{ url_for('portret') }}" class="item">Portret</a></li>
+            <li><a href="{{ url_for('les') }}" class="item">Coaching</a></li>
+            <li><a href="{{ url_for('index') }}" class="item">Persoonlijk</a></li>
+            <li><a href="{{ url_for('index') }}" class="item">Contact</a></li>
+        </ul>
+    </div>
+</nav>

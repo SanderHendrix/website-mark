@@ -1,0 +1,103 @@
+a {
+  text-decoration: none; }
+
+.transition {
+  transition: all 0.3s linear 0s; }
+
+/* Globals */
+/* Navigation bar */
+/* Footer */
+footer {
+  background: #222222;
+  margin-top: 20px; }
+
+.navbar-stripe {
+  background-color: #222222;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12); }
+
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  /* Brand */
+  /* Hamburger menu for mobile */
+  /* List of items that gets either toggled by the button (default; mobile), 
+     * switching the .visible class on or off, and is visible on bigger 
+     * screens.
+     */ }
+  .navbar > .brand {
+    font-size: 16px;
+    color: #777;
+    min-height: 56px;
+    display: flex;
+    align-items: center; }
+  .navbar > button.hamburger {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 1px; }
+    @media (min-width: 576px) {
+      .navbar > button.hamburger {
+        display: none; } }
+    .navbar > button.hamburger > .icon {
+      position: relative;
+      margin-top: 8px;
+      margin-bottom: 8px; }
+      .navbar > button.hamburger > .icon, .navbar > button.hamburger > .icon:before, .navbar > button.hamburger > .icon:after {
+        display: block;
+        width: 24px;
+        height: 3px;
+        transition: background-color 0.3s linear, transform 0.3s linear;
+        background-color: #555555; }
+      .navbar > button.hamburger > .icon:before, .navbar > button.hamburger > .icon:after {
+        position: absolute;
+        content: ""; }
+      .navbar > button.hamburger > .icon:before {
+        top: -8px; }
+      .navbar > button.hamburger > .icon:after {
+        top: 8px; }
+    .navbar > button.hamburger.collapsed > .icon {
+      background-color: transparent; }
+      .navbar > button.hamburger.collapsed > .icon:before {
+        transform: translateY(8px) rotate(45deg); }
+      .navbar > button.hamburger.collapsed > .icon:after {
+        transform: translateY(-8px) rotate(-45deg); }
+  .navbar > ul {
+    display: none;
+    flex-flow: column;
+    width: 100%;
+    /* Remove default styling */
+    list-style-type: none;
+    margin: 0;
+    /* Toggle-class to switch between 'display: none' and this, on button 
+         * activation/click (js) 
+         */
+    /* The items */ }
+    @media (min-width: 576px) {
+      .navbar > ul {
+        display: flex;
+        flex-flow: row nowrap;
+        min-height: 48px;
+        /* Inline with the other elements, stretch to the height of parent 
+             * for the bottom-border or background of its children 
+             */
+        align-self: stretch;
+        /* Reset the mobile width */
+        width: auto; } }
+    .navbar > ul.visible {
+      display: flex; }
+    .navbar > ul > li {
+      display: flex; }
+      .navbar > ul > li > a {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        text-transform: uppercase;
+        color: #888;
+        font-size: 14px;
+        border-bottom: 2px solid transparent; }
+        .navbar > ul > li > a.active, .navbar > ul > li > a:hover, .navbar > ul > li > a:focus {
+          color: #eee;
+          border-bottom-color: #888; }

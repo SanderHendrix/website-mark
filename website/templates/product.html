@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container wide">
+    <div class="flex gallery" itemscope itemtype="http://schema.org/ImageGallery">
+        {% for (original, medium, thumb) in gallery %}
+        <figure class="flex thumb" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ original.href }}" itemprop="contentUrl" data-size="{{ original.width }}x{{ original.height }}" data-med="{{ medium.href }}" data-med-size="{{ medium.width }}x{{ medium.height }}" data-author="Mark Hendrix">
+                <img src="{{ thumb.href }}" itemprop="thumbnail" alt="{{ thumb.caption}}" />
+            </a>
+            <figcaption itemprop="caption description">
+                {{ original.caption }}
+                <br/>
+                <span itemprop="copyrightHolder">Foto: 
+                    {% if original.copyright %}
+                    {{ original.copyright }}
+                    {% else %}
+                    Mark Hendrix
+                    {% endif %}
+                </span>
+            </figcaption>
+        </figure>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Mark Hendrix Fotografie</title>
+        {% endif %}
+
+        <!-- PhotoSwipe css -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='PhotoSwipe/dist/photoswipe.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='PhotoSwipe/dist/default-skin/default-skin.css') }}">  
+
+        <!-- CSS -->
+        <!--
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.scss.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.scss.css') }}">
+    </head>
+    <body>
+        {% include 'navbar_flex.html' %}
+        <div class="main">
+            <!-- Variable page contents -->{% block content %}{% endblock %}<!-- End of variable page contents -->
+
+        </div> <!-- /main -->
+        <footer><div class="container wide copyright">&copy; Mark Hendrix</div></footer> 
+        <!-- PhotoSwipe html -->
+        {% include 'PhotoSwipe.html' %}
+        <!-- /EOF PhotSwipe html -->
+
+        <!-- navbar js -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+        <!-- Additional scripts -->
+        <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <!-- PhotoSwipe -->
+        <!-- Core JS file -->
+        <script src="{{ url_for('static', filename='PhotoSwipe/dist/photoswipe.min.js') }}"></script>
+        <!-- UI JS file -->
+        <script src="{{ url_for('static', filename='PhotoSwipe/dist/photoswipe-ui-default.min.js') }}"></script> 
+        <!-- Gallery JS file -->
+        <script src="{{ url_for('static', filename='js/PhotoSwipe.js') }}"></script>
+    </body>
+</html>
